@@ -1,0 +1,103 @@
+.character-card {
+  height: 350px;
+  background-color: rgb(31, 31, 31);
+  color: white;
+  transition: all 0.5s;
+
+  .img-container {
+    border-radius: 50%;
+    overflow: hidden;
+    //min-height: calc(100% - 30px);
+    //height: calc(100% - 30px);
+    ////min-width: 200px;
+    max-width: calc(100% - 30px);
+    aspect-ratio: 1 / 1;
+    margin: 15px auto auto;
+    border: 2px solid red;
+
+    .img-character {
+      border-radius: 50%;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      transition: all 0.5s;
+    }
+  }
+
+  .card-title {
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    white-space: nowrap;
+  }
+
+  .card-text {
+    opacity: 0.75;
+    font-family: 'Share Tech', sans-serif;
+  }
+
+  button {
+    background-color: #a81919;
+    transition: all 0.5s;
+    font-family: 'Share Tech', sans-serif;
+  }
+
+  button:hover {
+    background-color: #ff2a2a;
+  }
+}
+
+.character-card:hover {
+  box-shadow: 0 0 20px 3px rgb(255, 0, 0);
+
+  .img-character {
+    transform: scale(1.2);
+  }
+}
+
+.movie-card {
+  height: 260px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-img-overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    top: -260px;
+    bottom: 260px;
+    border-radius: 0;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .card-title {
+      font-family: 'Kdam Thmor Pro', sans-serif;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-align: center;
+    }
+
+    .card-text {
+      font-family: 'Share Tech', sans-serif;
+      font-size: 1.15rem;
+      opacity: 0.75;
+    }
+  }
+}
+
+.movie-card:hover {
+  box-shadow: 0 0 20px 3px rgb(255, 0, 0);
+
+  .card-img-overlay {
+    top: 0;
+    bottom: 0;
+  }
+}

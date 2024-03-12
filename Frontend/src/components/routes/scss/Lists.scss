@@ -1,0 +1,61 @@
+.btn-registrar {
+  font-family: 'Share Tech', sans-serif;
+  width: 280px;
+}
+
+.search-bar {
+  font-family: 'Share Tech', sans-serif;
+  width: 300px;
+  background: linear-gradient(#333333, #222222);
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 0 #000;
+  color: #888;
+  text-shadow: 0 -1px 0 #000;
+
+  //noinspection CssInvalidPropertyValue
+  -webkit-box-reflect: below 5px linear-gradient(transparent, rgba(255, 255, 255, 0.25));
+}
+
+.search-bar:focus {
+  animation: red-glow 1s ease-out infinite alternate;
+  background: linear-gradient(#333933, #222922);
+  border-color: #ff0000;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.2), inset 0 0 5px rgba(255, 0, 0, 0.1), 0 2px 0 #000;
+  color: #efe;
+  outline: none;
+}
+
+.dropdown-sort {
+  font-family: 'Share Tech', sans-serif;
+  width: 150px;
+  z-index: 10;
+
+  //noinspection CssInvalidPropertyValue
+  -webkit-box-reflect: below 5px linear-gradient(transparent, rgba(255, 255, 255, 0.25));
+
+  button {
+    border: 2px solid white;
+    background-color: #b71717;
+  }
+
+  button:hover {
+    border: 2px solid white;
+    background-color: #ff0000;
+  }
+}
+
+hr {
+  border-top: 2px solid white;
+}
+
+@media only screen and (width <= 992px)  {
+  .btn-registrar {
+    width: auto;
+    padding-inline: 15px !important;
+    font-size: .95rem;
+  }
+
+  .search-bar {
+    flex-grow: 1;
+  }
+}

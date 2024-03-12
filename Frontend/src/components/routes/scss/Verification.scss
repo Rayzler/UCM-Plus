@@ -1,0 +1,255 @@
+.verification-container {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  .container-login {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+
+  .verification-card-container {
+    padding: 0 25px;
+    width: 50vw;
+    height: 430px;
+    display: flex;
+    align-items: center;
+
+    .card {
+      background: linear-gradient(#004746, #111111);
+      border: 6px solid #00a4a2;
+      box-shadow: 0 0 15px #00fffd;
+      color: white;
+      animation: show-form-card 3s;
+      transition: 1s all;
+      padding: 10px 25px;
+      margin: auto;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+
+      .card-header {
+        background-color: rgba(0, 0, 0, 0.5);
+        font-family: 'Kdam Thmor Pro', sans-serif;
+        text-align: center;
+        min-height: 62px !important;
+        height: 62px !important;
+        overflow: hidden;
+        animation: show-form-card-body 2.5s;
+      }
+
+      .card-body {
+        padding-bottom: 10px;
+        font-family: 'Share Tech', sans-serif;
+        animation: show-form-card-body 2.5s;
+
+        form {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          position: relative;
+
+          input {
+            background: linear-gradient(#333333, #222222);
+            border: 1px solid #444;
+            border-radius: 5px;
+            box-shadow: 0 2px 0 #000;
+            color: #888;
+            text-shadow: 0 -1px 0 #000;
+          }
+
+          input:focus {
+            animation: box-glow 1s ease-out infinite alternate;
+            background: linear-gradient(#333933, #222922);
+            border-color: #00fffc;
+            box-shadow: 0 0 5px rgba(0, 255, 253, 0.2), inset 0 0 5px rgba(0, 255, 253, 0.1), 0 2px 0 #000;
+            color: #efe;
+            outline: none;
+          }
+
+          input:invalid {
+            border: 2px solid red;
+            box-shadow: 0 0 5px rgba(255, 0, 0, 0.2), inset 0 0 5px rgba(255, 0, 0, 0.1), 0 2px 0 #000;
+          }
+
+          button {
+            min-height: 38px !important;
+            height: 38px !important;
+            overflow: hidden;
+
+            background: linear-gradient(#333333, #222222);
+            border: 1px solid #444;
+            border-radius: 5px;
+            box-shadow: 0 2px 0 #000;
+            color: #fff;
+            font-weight: 400;
+            text-shadow: 0 -1px 0 #000;
+            transition: 1s all;
+            position: relative;
+          }
+
+          button:hover, button:focus {
+            background: linear-gradient(#393939, #292929);
+            color: #00fffc;
+            outline: none;
+          }
+
+          button:active {
+            background: linear-gradient(#393939, #292929);
+            box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
+            top: 1px;
+          }
+        }
+      }
+    }
+
+    .card:hover {
+      border: 6px solid #00fffd;
+      box-shadow: 0 0 25px #00fffd;
+    }
+  }
+
+  .alert-container {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 0 25px;
+    width: 50vw;
+    animation: show-form-card-body 4s;
+    font-family: 'Share Tech', sans-serif;
+    z-index: 0;
+
+    .alert {
+      margin: 0;
+
+      .form-link {
+        color: inherit;
+      }
+    }
+  }
+
+  #logo {
+    animation: logo-entry 2.5s ease-in;
+    width: 500px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 20;
+
+    h1 {
+      animation: text-glow 2s ease-out infinite alternate;
+      margin: 50px;
+      font-family: 'Kdam Thmor Pro', sans-serif;
+      color: #00a4a2;
+      font-size: 64px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000;
+    }
+
+    h1:before {
+      animation: before-glow 2s ease-out infinite alternate;
+      border-left: 535px solid transparent;
+      border-bottom: 10px solid #00a4a2;
+      content: ' ';
+      height: 0;
+      position: absolute;
+      right: 10px;
+      top: -10px;
+      width: 0;
+    }
+
+    h1:after {
+      animation: after-glow 2s ease-out infinite alternate;
+      border-left: 100px solid transparent;
+      border-top: 16px solid #00a4a2;
+      content: ' ';
+      height: 0;
+      position: absolute;
+      right: 0;
+      top: 24px;
+      transform: rotate(-47deg);
+      width: 0;
+    }
+  }
+
+  #circle {
+    animation: rotate 4s linear infinite, circle-entry 6s ease-in-out;
+    background-color: #000000;
+    border-radius: 50%;
+    border: 10px solid #00a4a2;
+    box-shadow: 0 0 0 2px black, 0 0 0 6px #00fffc;
+    height: 625px;
+    width: 625px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    opacity: 0.4;
+    z-index: -3;
+
+    #inner-circle {
+      background-color: #000000;
+      border-radius: 50%;
+      border: 36px solid #00fffc;
+      height: 575px;
+      width: 575px;
+      margin: 15px;
+    }
+
+    #inner-circle:before {
+      content: ' ';
+      width: 50%;
+      height: 100%;
+      background-color: #000000;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #inner-circle:after {
+      content: ' ';
+      width: 100%;
+      height: 50%;
+      background-color: #000000;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+@media screen and (width < 700px) {
+  #circle {
+    display: none;
+  }
+
+  .verification-container {
+    max-width: 100vw;
+    overflow: hidden;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+
+    #logo {
+      width: 90vw;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    .verification-card-container {
+      width: 85vw !important;
+      margin-inline: auto !important;
+    }
+
+    .alert-container {
+      width: 85vw;
+      padding: 0;
+    }
+  }
+}

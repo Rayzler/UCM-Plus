@@ -1,0 +1,9 @@
+Dump20221208.sql
+Backend/.idea
+Backend/node_modules
+Backend/package-lock.json
+Frontend/build
+Frontend/.idea
+Frontend/node_modules
+Frontend/package-lock.json
+.idea

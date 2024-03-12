@@ -1,0 +1,31 @@
+.home-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 100px;
+
+  h1 {
+    font-family: 'Share Tech', sans-serif;
+    position: relative;
+    text-align: justify;
+  }
+
+  img {
+    margin-left: 30px;
+    position: relative;
+    width: 550px;
+    border: 2px solid white;
+  }
+}
+
+.carousel-movies {
+  position: relative;
+  top: -100px;
+}
+
+.txt-error {
+  position: relative;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  text-align: center;
+  margin-top: 35px;
+  color: #adadad;
+}

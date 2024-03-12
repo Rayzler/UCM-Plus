@@ -1,0 +1,377 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Share+Tech&display=swap');
+
+#root {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(0deg, rgb(15, 15, 15) 0%, rgb(5, 5, 5) 50%, rgba(0,0,0,1) 100%);
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow-x: hidden;
+
+  .fullpage-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    z-index: 2000;
+
+    * {
+      transition: all 0.75s;
+    }
+
+    #rect-top {
+      position: absolute;
+      height: 50vh;
+      width: 100%;
+      background: linear-gradient(0deg, rgba(179, 0, 0, 1) 0%, rgba(255, 0, 0, 1) 100%);
+      z-index: 305;
+    }
+
+    #rect-bottom {
+      position: absolute;
+      height: 50vh;
+      width: 100%;
+      background: linear-gradient(0deg, rgba(52, 0, 0, 1) 0%, rgba(130, 0, 0, 1) 62%, rgba(179, 0, 0, 1) 100%);
+      z-index: 305;
+    }
+
+    .reactor-container {
+      width: 350px;
+      height: 350px;
+      margin: auto;
+      position: relative;
+      z-index: 310;
+      border-radius: 50%;
+      background-color: #384c50;
+      border: 1px solid rgb(18, 20, 20);
+      box-shadow: 0 0 32px 8px rgba(18, 20, 20, 0.75), 0 0 4px 1px rgb(18, 20, 20) inset;
+
+      .reactor-container-inner {
+        height: 278px;
+        width: 278px;
+        background-color: rgb(22, 26, 27);
+        box-shadow: 0 0 4px 1px #52FEFE;
+      }
+
+      .circle {
+        border-radius: 50%;
+      }
+
+      .abs-center {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+      }
+
+      .tunnel {
+        width: 257px;
+        height: 257px;
+        background-color: #FFFFFF;
+        box-shadow: 0 0 5px 1px #52FEFE, 0 0 5px 4px #52FEFE inset;
+      }
+
+      .core-wrapper {
+        width: 210px;
+        height: 210px;
+        background-color: #073c4b;
+        box-shadow: 0 0 5px 4px #52FEFE, 0 0 6px 2px #52FEFE inset;
+      }
+
+      .core-outer {
+        width: 140px;
+        height: 140px;
+        border: 1px solid #52FEFE;
+        background-color: #FFFFFF;
+        box-shadow: 0 0 2px 1px #52FEFE, 0 0 10px 5px #52FEFE inset;
+      }
+
+      .core-inner {
+        width: 82px;
+        height: 82px;
+        border: 5px solid #1B4E5F;
+        background-color: #FFFFFF;
+        box-shadow: 0 0 7px 5px #52FEFE, 0 0 10px 10px #52FEFE inset;
+      }
+
+      .coil-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        animation: 1.5s infinite linear rotate;
+
+        .coil {
+          position: absolute;
+          width: 30px;
+          height: 25px;
+          top: calc(50% - 130px);
+          left: calc(50% - 15px);
+          transform-origin: 15px 130px;
+          background-color: #073c4b;
+          box-shadow: 0 0 5px #53FEFE inset;
+        }
+
+        .coil-1 {
+          transform: rotate(0deg);
+        }
+
+        .coil-2 {
+          transform: rotate(45deg);
+        }
+
+        .coil-3 {
+          transform: rotate(90deg);
+        }
+
+        .coil-4 {
+          transform: rotate(135deg);
+        }
+
+        .coil-5 {
+          transform: rotate(180deg);
+        }
+
+        .coil-6 {
+          transform: rotate(225deg);
+        }
+
+        .coil-7 {
+          transform: rotate(270deg);
+        }
+
+        .coil-8 {
+          transform: rotate(315deg);
+        }
+      }
+    }
+  }
+
+  .fullpage-wrapper.show-loading {
+    #rect-top, .reactor-container {
+      top: 0;
+    }
+
+    #rect-bottom {
+      bottom: 0;
+    }
+  }
+
+  .fullpage-wrapper.hide-loading {
+    #rect-top, .reactor-container {
+      top: -600px;
+    }
+
+    #rect-bottom {
+      bottom: -600px;
+    }
+  }
+
+  .modal-msg .modal-content {
+    background: linear-gradient(#004746, #111111);
+    color: white;
+    border: 3px solid #00a4a2;
+    box-shadow: 0 0 10px #00fffd;
+    font-family: 'Share Tech', sans-serif;
+
+    .modal-header {
+      font-family: 'Kdam Thmor Pro', sans-serif;
+    }
+
+    .modal-footer button {
+      background-color: #00a4a2;
+      color: white;
+      border-color: #00fffd;
+    }
+  }
+
+  .my-btn {
+    position: relative;
+    background: #fff;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 10px 30px;
+    transition: 0.5s;
+
+    //noinspection CssInvalidPropertyValue
+    -webkit-box-reflect: below 5px linear-gradient(transparent, rgba(255, 255, 255, 0.25));
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    i {
+      position: absolute;
+      inset: 0;
+      display: block;
+    }
+
+    i::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 80%;
+      width: 10px;
+      height: 4px;
+      background: #27282c;
+      transform: translateX(-50%) skewX(325deg);
+      transition: 0.5s;
+    }
+
+    i::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 20%;
+      width: 10px;
+      height: 4px;
+      background: #27282c;
+      transform: translateX(-50%) skewX(325deg);
+      transition: 0.5s;
+    }
+  }
+
+  .my-btn:hover {
+    background: #ff1e1e;
+    color: #ff1e1e;
+    letter-spacing: 0.25em;
+    animation: red-glow 1s ease-out infinite alternate;
+
+    i::before {
+      width: 20px;
+      left: 20%;
+    }
+
+    i::after {
+      width: 20px;
+      left: 80%;
+    }
+  }
+
+  .my-btn:before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 3px;
+    background: #27282c;
+  }
+}
+
+@keyframes show-form-card {
+  0% {
+    width: 0;
+    height: 0;
+    padding: 0;
+  }
+  50% {
+    width: 0;
+    height: 100%;
+    padding: 0;
+  }
+  100% {
+    width: 100%;
+    padding: 10px 25px;
+  }
+}
+
+@keyframes show-form-card-body {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes logo-entry {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes text-glow {
+  from {
+    color: #00a4a2;
+    text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000;
+  }
+  to {
+    color: #00fffc;
+    text-shadow: 0 0 20px rgba(0, 255, 253, 0.6), 0 0 10px rgba(0, 255, 253, 0.4), 0 2px 0 #000;
+  }
+}
+
+@keyframes before-glow {
+  from {
+    border-bottom: 10px solid #00a4a2;
+  }
+  to {
+    border-bottom: 10px solid #00fffc;
+  }
+}
+
+@keyframes after-glow {
+  from {
+    border-top: 16px solid #00a4a2;
+  }
+  to {
+    border-top: 16px solid #00fffc;
+  }
+}
+
+@keyframes circle-entry {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes box-glow {
+  from {
+    border-color: #00b8b6;
+    box-shadow: 0 0 5px rgba(0, 255, 253, 0.2), inset 0 0 5px rgba(0, 255, 253, 0.1), 0 2px 0 #000;
+  }
+  to {
+    border-color: #00fffc;
+    box-shadow: 0 0 20px rgba(0, 255, 253, 0.6), inset 0 0 10px rgba(0, 255, 253, 0.4), 0 2px 0 #000;
+  }
+}
+
+@keyframes red-glow {
+  from {
+    border-color: #b80000;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.35), inset 0 0 5px rgba(255, 0, 0, 0.1), 0 2px 0 #000;
+  }
+  to {
+    border-color: #ff0000;
+    box-shadow: 0 0 35px rgba(255, 0, 0, 0.8), inset 0 0 10px rgba(255, 0, 0, 0.4), 0 2px 0 #000;
+  }
+}

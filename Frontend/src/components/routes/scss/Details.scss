@@ -1,0 +1,312 @@
+.detail-character-container {
+  transition: left 1s;
+  background: red;
+
+  .img-area {
+    position: static;
+    z-index: auto;
+    overflow: hidden;
+    width: 65vh;
+    min-width: 65vh;
+    min-height: 65vh;
+    height: 65vh;
+  }
+
+  .img-detail-container {
+    position: fixed;
+    background: rgba(0,0,0,0.5);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    width: 65vh;
+    min-width: 65vh;
+    min-height: 65vh;
+    height: 65vh;
+
+    //noinspection CssInvalidPropertyValue
+    -webkit-box-reflect: below 5px linear-gradient(transparent, rgba(255, 255, 255, 0.25));
+
+    .img-detail {
+      position: relative;
+      z-index: 2;
+      width: calc(100% - 30px);
+      height: calc(100% - 30px);
+      object-fit: cover;
+      user-select: none;
+    }
+  }
+
+  .img-detail-container::before {
+    content: "";
+    position: absolute;
+    inset: -10px 140px;
+    background: #DA0000;
+    box-shadow: 0 0 20px 20px #DA0000;
+    transition: 0.5s;
+    animation: rotate 4s linear infinite;
+  }
+
+  .img-detail-container:hover {
+    box-shadow: 0 0 20px 3px #DA0000;
+  }
+
+  .img-detail-container:hover::before {
+    inset: -20px 0;
+  }
+
+  .img-detail-container::after {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    background: #2a2a2a;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 0.5s;
+  }
+
+  .img-detail-container:hover::after {
+    box-shadow: inset 0 0 20px 3px #DA0000;
+  }
+
+  .content-detail {
+    position: static;
+    z-index: auto;
+    display: flex;
+    flex-direction: column;
+
+    h2, h4 {
+      position: relative;
+      z-index: 5;
+      display: inline-block;
+    }
+
+    h2 {
+      font-size: 5rem;
+      font-family: 'Kdam Thmor Pro', sans-serif;
+      font-variant: small-caps;
+      max-width: 800px;
+      font-weight: 600;
+      height: calc(5rem + 32px);
+      padding: 8px;
+      word-break: break-all;
+      animation: show-title 1s linear;
+      position: relative;
+      letter-spacing: 5px;
+      white-space: nowrap;
+
+      //noinspection CssInvalidPropertyValue
+      -webkit-box-reflect: below -50px linear-gradient(transparent, rgba(255, 255, 255, 0.15));
+
+      span {
+        position: relative;
+        display: inline-block;
+        animation: rotate-title 1s linear;
+      }
+
+      .blank-space {
+        white-space: pre;
+      }
+    }
+
+    h4 {
+      font-family: 'Share Tech', sans-serif;
+      font-size: 2.25rem;
+    }
+  }
+}
+
+.detail-movie-container {
+  transition: left 1s;
+
+  h2 {
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+    font-size: 4rem;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-variant: small-caps;
+    font-weight: 600;
+    height: calc(5rem + 32px);
+    padding: 8px;
+    word-break: break-all;
+    animation: show-title 1s linear;
+    letter-spacing: 3px;
+    white-space: nowrap;
+    color: white;
+
+    //noinspection CssInvalidPropertyValue
+    -webkit-box-reflect: below -70px linear-gradient(transparent, rgba(255, 255, 255, 0.15));
+
+    span {
+      position: relative;
+      display: inline-block;
+      animation: rotate-title 1s linear;
+    }
+
+    .blank-space {
+      white-space: pre;
+    }
+  }
+
+  .img-detail-container {
+    position: relative;
+    z-index: 6;
+    background: rgba(255, 255, 255, 0.25);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    width: 40vw;
+    min-width: 40vw;
+    min-height: 50vh;
+    height: 50vh;
+    border-radius: 15px;
+
+    //noinspection CssInvalidPropertyValue
+    -webkit-box-reflect: below 5px linear-gradient(transparent, rgba(255, 255, 255, 0.25));
+
+    .img-detail {
+      position: relative;
+      z-index: 6;
+      width: calc(100% - 15px);
+      height: calc(100% - 15px);
+      object-fit: cover;
+      user-select: none;
+      border-radius: 10px;
+    }
+  }
+
+  .img-detail-container::before {
+    content: "";
+    position: absolute;
+    inset: 100px -50px;
+    background: #DA0000;
+    box-shadow: 0 0 20px 20px #DA0000;
+    transition: 0.5s;
+    animation: rotate 4s linear infinite;
+  }
+
+  .img-detail-container:hover {
+    box-shadow: 0 0 20px 3px #DA0000;
+  }
+
+  .img-detail-container:hover::before {
+    inset: -300px -100px;
+  }
+
+  .content-detail {
+    position: static;
+    z-index: auto;
+    display: flex;
+
+    h4 {
+      position: relative;
+      z-index: 5;
+      display: inline-block;
+      font-family: 'Share Tech', sans-serif;
+      font-size: 2rem;
+    }
+
+    p {
+      position: relative;
+      z-index: 5;
+      display: inline-block;
+      font-family: 'Share Tech', sans-serif;
+      font-size: 1.5rem;
+      text-align: justify;
+    }
+  }
+}
+
+.tabla-peliculas, .tabla-personajes {
+  position: relative;
+  z-index: 8;
+  border: 2px ridge white;
+  color: white;
+  text-align: center;
+
+  thead {
+    background-color: #1d2125;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    letter-spacing: 2px;
+  }
+
+  tbody {
+    background-color: #2c3034;
+    font-family: 'Share Tech', sans-serif;
+    font-size: 1.1rem;
+
+    * {
+      transition: all 0.5s;
+    }
+
+    .movie-row:hover {
+      background-color: #444749;
+    }
+
+    .delete-cell {
+      background-color: #9b1010 !important;
+    }
+
+    .delete-cell:hover {
+      background-color: #d30a0a !important;
+    }
+  }
+}
+
+.buttongroup-container {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  right: 0;
+  margin: 20px;
+
+  .grupo-botones {
+    margin-right: 20px;
+
+    //noinspection CssInvalidPropertyValue
+    -webkit-box-reflect: below 6px linear-gradient(transparent, rgba(255, 255, 255, 0.25));
+
+    button {
+      background-color: #d30a0a;
+      border: none;
+      height: 42px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+      transition: 0.5s;
+    }
+
+    button:hover {
+      background-color: #9b1010;
+      letter-spacing: 0.25em;
+    }
+  }
+}
+
+@keyframes show-title {
+  from {
+    letter-spacing: 50px;
+    opacity: 0;
+    text-shadow: 0 0 15px white;
+    max-width: 10750px;
+  }
+  to {
+    letter-spacing: 3px;
+    opacity: 1;
+    text-shadow: 0 0 0 white;
+    max-width: 750px;
+  }
+}
+
+@keyframes rotate-title {
+  from {
+    transform: rotate(50deg) scaleX(0);
+  }
+  to {
+    transform: rotate(0deg) scaleX(1);
+  }
+}
